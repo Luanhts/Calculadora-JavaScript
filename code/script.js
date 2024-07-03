@@ -18,6 +18,11 @@ function divisao(x, y){
     return x / y;
 }
 
+function porcent(x, y){
+    let calc = (x*y) / 100
+    return calc
+}
+
 const readline = require('readline');
 
 const rl = readline.createInterface({
@@ -27,17 +32,18 @@ const rl = readline.createInterface({
 
 function iniciarCalculadora() {
     while (true) {
-        console.log("----------------\nOpções\n----------------\n");
-        console.log("1. adição");
-        console.log("2. subtração");
-        console.log("3. multiplicação");
-        console.log("4. divisão");
-        console.log("5. sair\n");
+        console.log("----------------\nOpções\n----------------");
+        console.log("[1] adição");
+        console.log("[2] subtração");
+        console.log("[3] multiplicação");
+        console.log("[4] divisão");
+        console.log("[5] porcentagem")
+        console.log("[6] sair\n");
 
-        rl.question("Escolha uma opção: ", function(escolha) {
+        rl.question("Escolha uma opção:", function(escolha) {
             escolha = parseInt(escolha.trim());
 
-            if (escolha === 5) {
+            if (escolha === 6) {
                 console.log("Encerrando a calculadora...");
                 rl.close();
             } else if (isNaN(escolha) || escolha < 1 || escolha > 5) {
@@ -58,6 +64,8 @@ function iniciarCalculadora() {
                             console.log(`\nResultado: ${multiplicacao(num1, num2)}`);
                         } else if (escolha === 4) {
                             console.log(`\nResultado: ${divisao(num1, num2)}`);
+                        } else if (escolha === 5) {
+                            console.log(`\nResultado: ${porcent(num1, num2)}`);
                         }
                         iniciarCalculadora();
                     });
