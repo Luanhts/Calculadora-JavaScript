@@ -28,11 +28,11 @@ const readline = require('readline');
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
-});
+});s
 
 function iniciarCalculadora() {
-    while (true) {
-        console.log("----------------\nOpções\n----------------");
+
+        conole.log("----------------\nOpções\n----------------");
         console.log("[1] adição");
         console.log("[2] subtração");
         console.log("[3] multiplicação");
@@ -72,7 +72,6 @@ function iniciarCalculadora() {
                 });
             }
         });
-        break; 
     }
-}
+
 iniciarCalculadora();
